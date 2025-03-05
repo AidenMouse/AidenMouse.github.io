@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aiden Berry - Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="script.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/@n8n/chat/dist/style.css" rel="stylesheet" />
+    <style>
+      /* Load custom styles */
+      @import url('styles.css');
+    </style>
+    <script type="module">
+        import { createChat } from 'https://cdn.jsdelivr.net/npm/@n8n/chat/dist/chat.bundle.es.js';
+
+        createChat({
+            webhookUrl: 'https://aidenmouse.app.n8n.cloud/webhook/32773dbf-7292-42ba-b715-ad31824a6754/chat',
+            initialMessages: ['Hi, I\'m BerryBot 🍓! How can I help you today?'],
+            title: 'BerryBot 🍓 Chat',  // Custom Chat Title
+            theme: {
+                color: 'cyan',  // Change primary color to cyan
+                backgroundColor: '#1f1f1f',  // Matches website dark grey
+                textColor: 'lightgray',  // Light text for better readability
+                headerBackgroundColor: 'black',  // Makes header black
+            }
+        });
+    </script>
+</head>
+<body>
+    <header>
+        <h1 class="logo">Aiden Berry</h1>
+        <nav class="navbar">
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#coding-languages">Coding Languages</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <section id="hero">
+        <h1>Welcome to My Portfolio</h1>
+        <p>Web Developer | Game Modder</p>
+        <a href="#projects" class="btn">View My Work</a>
+    </section>
+    
+    <section id="about" class="content-box">
+        <h2>About Me</h2>
+        <img src="img/profile.png" alt="Aiden Berry" class="profile-pic">
+        <p>Hey, I'm Aiden! I'm passionate about web development, Minecraft modding, and technology in general. I enjoy building unique projects, learning new skills, and sharing my knowledge with others. When I'm not coding, you can find me working on AdventureCraft, creating custom enhancements for the game.</p>
+    </section>
+    
+    <section id="projects" class="content-box">
+        <h2>Projects</h2>
+        <div class="projects-container">
+            <div class="card">
+                <img src="img/adventurecraft-logo.png" alt="AdventureCraft Logo" class="project-logo">
+                <h3>AdventureCraft</h3>
+                <p>My custom Minecraft server with modded enhancements.</p>
+            </div>
+        </div>
+    </section>
+    
+    <section id="coding-languages" class="content-box">
+        <h2 class="languages-title">Coding Languages</h2>
+        <div class="languages-container">
+            <div class="language">
+                <img src="img/python.png" alt="Python">
+                <p>Python</p>
+            </div>
+            <div class="language">
+                <img src="img/js.png" alt="JavaScript">
+                <p>JavaScript</p>
+            </div>
+            <div class="language">
+                <img src="img/html.png" alt="HTML">
+                <p>HTML</p>
+            </div>
+            <div class="language">
+                <img src="img/css.png" alt="CSS">
+                <p>CSS</p>
+            </div>
+            <div class="language">
+                <img src="img/lua.png" alt="Lua">
+                <p>Lua</p>
+            </div>
+        </div>
+    </section>
+    
+    <section id="contact" class="content-box">
+        <h2>Contact</h2>
+        <p>Email: <a href="mailto:aidenaberry2005@gmail.com">aidenaberry2005@gmail.com</a></p>
+    </section>
+    
+    <footer>
+        <p>&copy; 2025 Aiden Berry | All Rights Reserved</p>
+    </footer>
+</body>
+</html>

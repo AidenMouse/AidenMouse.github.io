@@ -1,0 +1,220 @@
+/* Main Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #121212;
+    color: white;
+    line-height: 1.6;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: black;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: cyan;
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+}
+
+.navbar li {
+    margin: 0 15px;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+}
+
+.navbar a:hover {
+    color: cyan;
+}
+
+#hero {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+}
+
+#hero h1 {
+    font-size: 50px;
+    font-weight: bold;
+}
+
+#hero p {
+    font-size: 20px;
+    margin-top: 10px;
+}
+
+.btn {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background: cyan;
+    color: black;
+    border-radius: 5px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: 0.3s ease;
+}
+
+.btn:hover {
+    background: white;
+}
+
+/* Content Box Styling */
+.content-box {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    background: #1f1f1f;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.2);
+    color: lightgray;
+}
+
+.content-box h2 {
+    color: cyan;
+    text-align: center;
+}
+
+#projects {
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.projects-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.card {
+    background: #1f1f1f;
+    padding: 20px;
+    border-radius: 5px;
+    transition: 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+    background: black;
+    color: white;
+}
+
+/* Profile Picture Styling */
+.profile-pic {
+    display: block;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin: 20px auto;
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+}
+
+.project-logo {
+    display: block;
+    max-width: 120px;
+    height: auto;
+    margin: 10px auto;
+    border-radius: 10px;
+}
+
+/* Coding Languages Section */
+.languages-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+    padding: 20px;
+}
+
+.language {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.language img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background-color: #1f1f1f;
+    padding: 10px;
+}
+
+.language p {
+    margin-top: 10px;
+    font-style: italic;
+    font-size: 18px;
+}
+
+@media (max-width: 768px) {
+    .navbar ul {
+        flex-direction: column;
+    }
+
+    .projects-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Customize Chat Window */
+.n8n-chat-widget {
+    background-color: #1f1f1f !important;
+    border: 1px solid cyan;
+    color: white !important;
+}
+
+.n8n-chat-widget .message-container {
+    background-color: #121212 !important;
+    color: rgb(105, 83, 83) !important;
+}
+
+.n8n-chat-widget input {
+    background-color: #2a2a2a !important;
+    color: rgb(76, 61, 61) !important;
+    border: 1px solid cyan !important;
+}
+
+.n8n-chat-widget button {
+    background-color: cyan !important;
+    color: black !important;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: 0.3s ease;
+}
+
+.n8n-chat-widget button:hover {
+    background-color: white !important;
+    color: black !important;
+}
