@@ -12,6 +12,7 @@ body {
     line-height: 1.6;
 }
 
+/* Header */
 header {
     position: fixed;
     top: 0;
@@ -50,6 +51,7 @@ header {
     color: cyan;
 }
 
+/* Hero Section */
 #hero {
     height: 100vh;
     display: flex;
@@ -65,25 +67,24 @@ header {
     position: absolute;
     top: 50%;
     left: 50%;
-    width: 90%; /* Limits width */
-    height: 60vh; /* Limits height */
+    width: 90%;
+    height: 60vh;
     display: flex;
     justify-content: center;
     align-items: center;
     transform: translate(-50%, -50%);
     z-index: -1;
     filter: blur(1px) brightness(0.8);
-    border-radius: 10px; /* Optional: Adds rounded edges */
+    border-radius: 10px;
     overflow: hidden;
 }
 
 .hero-background img {
-    width: 30%; /* Limits each image width */
-    height: 100%; /* Ensures images fill the box */
+    width: 30%;
+    height: 100%;
     object-fit: cover;
-    margin: 0 5px; /* Adds spacing between images */
+    margin: 0 5px;
 }
-
 
 #hero h1 {
     font-size: 50px;
@@ -112,7 +113,6 @@ header {
     background: white;
 }
 
-
 /* Content Box Styling */
 .content-box {
     max-width: 800px;
@@ -130,7 +130,6 @@ header {
     text-align: center;
 }
 
-/* Animated RGB Border */
 .content-box::before {
     content: "";
     position: absolute;
@@ -145,7 +144,6 @@ header {
     animation: animate-border 5s linear infinite;
 }
 
-/* Inner container to ensure content stays visible */
 .content-box::after {
     content: "";
     position: absolute;
@@ -158,42 +156,120 @@ header {
     z-index: -1;
 }
 
-/* Keyframes for the moving RGB effect */
 @keyframes animate-border {
     0% { background-position: 0% 50%; }
     50% { background-position: 100% 50%; }
     100% { background-position: 0% 50%; }
 }
 
-
 .content-box h2 {
     color: cyan;
     text-align: center;
 }
 
+/* Projects Section */
 #projects {
     padding: 50px 20px;
     text-align: center;
 }
 
 .projects-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 20px;
-    padding: 20px;
+    padding: 0 20px;
 }
 
 .card {
     background: #1f1f1f;
-    padding: 20px;
+    padding: 10px;
     border-radius: 5px;
     transition: 0.3s ease;
+    text-align: center;
+    margin: 0;
+    width: calc(33.333% - 40px);
+    height: 200px;
+}
+
+.card img {
+    width: 80px;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.card h3 {
+    font-size: 18px;
+    margin: 10px 0;
+    color: cyan;
+}
+
+.card p {
+    font-size: 14px;
+    color: lightgray;
 }
 
 .card:hover {
     transform: translateY(-5px);
 }
 
+/* Specific styles for each project */
+.card, .adventurecraft-server, .card.custom-invoice-gen {
+    position: relative;
+    width: calc(50% - 40px);
+    min-height: 250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: #1f1f1f;
+    padding: 20px;
+    border-radius: 10px;
+    transition: 0.3s ease;
+    text-align: center;
+    margin: 0;
+    border: 2px solid cyan;
+    overflow: hidden;
+}
+
+.card img, .adventurecraft-server img, .card.custom-invoice-gen img {
+    width: 50px;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.card h3, .adventurecraft-server h3, .card.custom-invoice-gen h3 {
+    font-size: 18px;
+    margin: 10px 0;
+    color: cyan;
+}
+
+.card p, .adventurecraft-server p, .card.custom-invoice-gen p {
+    font-size: 13px;
+    color: lightgray;
+    margin: 5px 0;
+    overflow: visible;
+    text-overflow: clip;
+    white-space: normal;
+    line-height: 1.2;
+}
+
+.card:hover, .adventurecraft-server:hover, .card.custom-invoice-gen:hover {
+    transform: translateY(-5px);
+    border-color: white;
+}
+
+.project-3 {
+    /* Add specific styles for Project 3 */
+}
+
+.card .btn {
+    padding: 5px 10px;
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+/* Footer */
 footer {
     text-align: center;
     padding: 10px;
@@ -220,14 +296,13 @@ footer {
 
 .project-logo {
     display: block;
-    width: 100px; /* Keeps the image size controlled */
-    height: auto; /* Maintains aspect ratio */
+    width: 100px;
+    height: auto;
     border-radius: 50%;
     margin: 20px auto;
     box-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
     animation: pulsate 2s infinite ease-in-out;
 }
-
 
 /* Coding Languages Section */
 .languages-container {
@@ -259,6 +334,7 @@ footer {
     font-size: 18px;
 }
 
+/* Responsive Design */
 @media (max-width: 768px) {
     .navbar ul {
         flex-direction: column;
@@ -298,4 +374,75 @@ footer {
 .n8n-chat-widget button:hover {
     background-color: white !important;
     color: black !important;
+}
+
+/* People Section */
+#people {
+    padding: 50px 20px;
+    text-align: center; /* Centers the header text */
+}
+
+.people-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start; /* Aligns the cards to the left */
+    gap: 20px;
+    padding: 0 20px; /* Padding inside the container */
+}
+
+.person, .person2 { /* Apply common styles to both .person and .person2 */
+    background: #1f1f1f;
+    padding: 30px; /* Increased padding for better spacing around content */
+    border-radius: 10px;
+    transition: 0.3s ease;
+    text-align: center;
+    margin: 10px; /* Adjust margin for spacing between cards */
+    width: calc(50% - 60px); /* Adjust width as necessary, considering the padding */
+    min-height: 300px; /* Increase minimum height to accommodate more text */
+    border: 2px solid cyan;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center content vertically */
+}
+
+.person img, .person2 img {
+    width: 100px; /* Keep image size consistent */
+    height: 100px; /* Ensure the image is square to maintain aspect ratio */
+    object-fit: cover;
+    margin-bottom: 15px; /* Increase margin-bottom for spacing */
+    border-radius: 50%;
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.5);
+}
+
+.person h3, .person2 h3 {
+    font-size: 20px; /* Increase font size for headers */
+    color: cyan;
+    margin-bottom: 5px; /* Adjust spacing below the header */
+}
+
+.person p, .person2 p {
+    font-size: 16px; /* Increase font size for better readability */
+    color: lightgray;
+    text-align: 0; /* Justify text to align it nicely within the card */
+    margin: 0 10px; /* Add horizontal margin */
+    line-height: 1.5; /* Increased line height for better text flow and readability */
+    word-break: normal; /* Ensures words break correctly at line end */
+    hyphens: auto; /* Automatically adds hyphens where appropriate */
+}
+
+.person:hover, .person2:hover {
+    transform: translateY(-5px);
+    border-color: white; /* Changes border color on hover for visual feedback */
+}
+
+@media (max-width: 768px) {
+    .person, .person2 {
+        width: calc(100% - 20px); /* Full width minus padding on smaller screens */
+    }
+}
+
+.person2 {
+    margin-left: auto; /* Adds specific styling to push .person2 to the right */
 }
