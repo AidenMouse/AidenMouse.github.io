@@ -57,16 +57,44 @@ header {
     justify-content: center;
     text-align: center;
     flex-direction: column;
+    position: relative;
+    overflow: hidden;
 }
+
+.hero-background {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 90%; /* Limits width */
+    height: 60vh; /* Limits height */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+    filter: blur(1px) brightness(0.8);
+    border-radius: 10px; /* Optional: Adds rounded edges */
+    overflow: hidden;
+}
+
+.hero-background img {
+    width: 30%; /* Limits each image width */
+    height: 100%; /* Ensures images fill the box */
+    object-fit: cover;
+    margin: 0 5px; /* Adds spacing between images */
+}
+
 
 #hero h1 {
     font-size: 50px;
     font-weight: bold;
+    color: white;
 }
 
 #hero p {
     font-size: 20px;
     margin-top: 10px;
+    color: rgb(255, 255, 255);
 }
 
 .btn {
@@ -84,6 +112,7 @@ header {
     background: white;
 }
 
+
 /* Content Box Styling */
 .content-box {
     max-width: 800px;
@@ -91,9 +120,51 @@ header {
     padding: 20px;
     background: #1f1f1f;
     border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 255, 255, 0.2);
     color: lightgray;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
 }
+
+/* Animated RGB Border */
+.content-box::before {
+    content: "";
+    position: absolute;
+    top: -4px;
+    left: -4px;
+    right: -4px;
+    bottom: -4px;
+    background: linear-gradient(90deg, red, cyan, lime, magenta, red);
+    background-size: 400%;
+    border-radius: 12px;
+    z-index: -2;
+    animation: animate-border 5s linear infinite;
+}
+
+/* Inner container to ensure content stays visible */
+.content-box::after {
+    content: "";
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    right: 4px;
+    bottom: 4px;
+    background: #1f1f1f;
+    border-radius: 8px;
+    z-index: -1;
+}
+
+/* Keyframes for the moving RGB effect */
+@keyframes animate-border {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
 
 .content-box h2 {
     color: cyan;
@@ -131,6 +202,12 @@ footer {
 }
 
 /* Profile Picture Styling */
+@keyframes pulsate {
+    0% { transform: scale(1); box-shadow: 0 0 10px rgba(0, 255, 255, 0.5); }
+    50% { transform: scale(1.05); box-shadow: 0 0 20px rgba(0, 255, 255, 0.8); }
+    100% { transform: scale(1); box-shadow: 0 0 10px rgba(0, 255, 255, 0.5); }
+}
+
 .profile-pic {
     display: block;
     width: 150px;
@@ -138,15 +215,19 @@ footer {
     border-radius: 50%;
     margin: 20px auto;
     box-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+    animation: pulsate 2s infinite ease-in-out;
 }
 
 .project-logo {
     display: block;
-    max-width: 120px;
-    height: auto;
-    margin: 10px auto;
-    border-radius: 10px;
+    width: 100px; /* Keeps the image size controlled */
+    height: auto; /* Maintains aspect ratio */
+    border-radius: 50%;
+    margin: 20px auto;
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+    animation: pulsate 2s infinite ease-in-out;
 }
+
 
 /* Coding Languages Section */
 .languages-container {
