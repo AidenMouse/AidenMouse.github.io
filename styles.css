@@ -199,39 +199,6 @@ header {
     padding: 0 20px;
 }
 
-.card {
-    background: #1f1f1f;
-    padding: 10px;
-    border-radius: 5px;
-    transition: 0.3s ease;
-    text-align: center;
-    margin: 0;
-    width: calc(33.333% - 40px);
-    height: 200px;
-}
-
-.card img {
-    width: 80px;
-    height: auto;
-    margin-bottom: 10px;
-}
-
-.card h3 {
-    font-size: 18px;
-    margin: 10px 0;
-    color: cyan;
-}
-
-.card p {
-    font-size: 14px;
-    color: lightgray;
-}
-
-.card:hover {
-    transform: translateY(-5px);
-}
-
-/* Specific styles for each project */
 .card, .adventurecraft-server, .card.custom-invoice-gen {
     position: relative;
     width: calc(50% - 40px);
@@ -251,7 +218,7 @@ header {
 }
 
 .card img, .adventurecraft-server img, .card.custom-invoice-gen img {
-    width: 50px;
+    width: 100px;
     height: auto;
     margin-bottom: 10px;
 }
@@ -275,10 +242,6 @@ header {
 .card:hover, .adventurecraft-server:hover, .card.custom-invoice-gen:hover {
     transform: translateY(-5px);
     border-color: white;
-}
-
-.project-3 {
-    /* Add specific styles for Project 3 */
 }
 
 .card .btn {
@@ -315,11 +278,11 @@ footer {
 .project-logo {
     display: block;
     width: 100px;
-    height: auto;
+    height: 100px;
     border-radius: 50%;
     margin: 20px auto;
-    box-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
-    animation: pulsate 2s infinite ease-in-out;
+    box-shadow: none;
+    animation: none;
 }
 
 /* Coding Languages Section */
@@ -367,7 +330,9 @@ footer {
 .n8n-chat-widget {
     background-color: #1f1f1f !important;
     border: 1px solid cyan;
+    padding: 30px; /* Increased padding for better spacing around content */
     color: white !important;
+    border-radius: 10px;
 }
 
 .n8n-chat-widget .message-container {
@@ -412,39 +377,37 @@ footer {
     background: #1f1f1f;
     padding: 30px; /* Increased padding for better spacing around content */
     border-radius: 10px;
-    transition: 0.3s ease;
-    text-align: center;
-    margin: 10px; /* Adjust margin for spacing between cards */
-    width: calc(50% - 60px); /* Adjust width as necessary, considering the padding */
-    min-height: 300px; /* Increase minimum height to accommodate more text */
-    border: 2px solid cyan;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
     overflow: hidden;
     display: flex;
     flex-direction: column;
     justify-content: center; /* Center content vertically */
+    text-align: center;
+    transition: 0.3s ease;
+    border: 2px solid cyan;
+    margin: 10px; /* Adjust margin for spacing between cards */
+    width: calc(50% - 60px); /* Adjust width as necessary, considering the padding */
+    min-height: 300px; /* Increase minimum height to accommodate more text */
 }
 
 .person img, .person2 img {
     width: 100px; /* Keep image size consistent */
     height: 100px; /* Ensure the image is square to maintain aspect ratio */
     object-fit: cover;
-    margin-bottom: 15px; /* Increase margin-bottom for spacing */
     border-radius: 50%;
     box-shadow: 0 0 15px rgba(0, 255, 255, 0.5);
+    margin-bottom: 15px; /* Increase margin-bottom for spacing */
 }
 
 .person h3, .person2 h3 {
-    font-size: 20px; /* Increase font size for headers */
     color: cyan;
+    font-size: 20px; /* Increase font size for headers */
     margin-bottom: 5px; /* Adjust spacing below the header */
 }
 
 .person p, .person2 p {
-    font-size: 16px; /* Increase font size for better readability */
     color: lightgray;
-    text-align: 0; /* Justify text to align it nicely within the card */
-    margin: 0 10px; /* Add horizontal margin */
+    font-size: 16px; /* Increase font size for better readability */
     line-height: 1.5; /* Increased line height for better text flow and readability */
     word-break: normal; /* Ensures words break correctly at line end */
     hyphens: auto; /* Automatically adds hyphens where appropriate */
